@@ -17,7 +17,7 @@ def preprocess_image(image_path):
         raise ValueError(f"Could not read image at {image_path}")
     
     img = cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT))
-    img = img / 255.0  # Normalize
+    img = img / 255.0  
     img = np.expand_dims(img, axis=0)  # Add batch dimension
     img = np.expand_dims(img, axis=-1)  # Add channel dimension
     return img
@@ -67,7 +67,7 @@ def main():
             predicted_text = predict_captcha(model_path, image_path)
             print(f"Image: {image_file}, True: {true_label}, Predicted: {predicted_text}")
         except Exception as e:
-            print(f"Error predicting {image_file}: {e}")
+            print(f"Error predicting captcha{image_file}: {e}")
 
 if __name__ == "__main__":
     main()
