@@ -15,7 +15,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 IMG_HEIGHT = 50
 IMG_WIDTH = 200
 BATCH_SIZE = 32
-EPOCHS = 60  # Increased to 60 epochs to match the notebook
+EPOCHS = 60  
 CAPTCHA_LENGTH = 5
 CHARACTERS = string.digits + string.ascii_lowercase
 
@@ -52,7 +52,7 @@ def load_data():
             img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
             if img is not None:
                 img = cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT))
-                img = img / 255.0  # Normalize
+                img = img / 255.0 
                 images.append(img)
                 final_labels.append(label)
         except Exception as e:
