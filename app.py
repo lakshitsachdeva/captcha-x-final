@@ -76,7 +76,7 @@ def main():
     if uploaded_file is not None:
         # Display the uploaded image
         image = Image.open(uploaded_file)
-        st.image(image, caption='Uploaded CAPTCHA Image', use_column_width=True)
+        st.image(image, caption='Uploaded CAPTCHA Image', use_container_width=True)
         
         # Convert PIL Image to numpy array
         image_array = np.array(image)
